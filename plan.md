@@ -13,9 +13,9 @@
 -   Create and activate your virtual env
 
 3. Build your templates
--   What templetes do you need?
+-   What templates do you need?
 -   Use bootstrap to create your base.html file
--   Extend base.html to all the templetes
+-   Extend base.html to all the templates
 
 4. Render your templetes (without functionality):
 -   Update your routes.py to display the landing page
