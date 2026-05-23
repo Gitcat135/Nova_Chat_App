@@ -1,54 +1,119 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale-1">
-        {% if title %}
-            <title> {{ title }} - Flask Templates</title>
-        {% else %}
-            <title> Flask Templates Demo</title>
-        {% endif %}
-        <title>Home</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-         rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-          crossorigin="anonymous"> 
-    </head>
-    <body>
+    
+        <!-- Start of hero section -->
+         <section class="hero-index">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <h4>Your Space to think out loud.</h4>
+                        <h1>Welcome to Nova, Where ideas find their <span>voice.</span></h1>
+                        <p>Nova is a clean, distraction-free platform for sharing thoughts, sparking conversations, and connecting with people who think deeply.</p>
+                        
+                        <a href="{{ url_for('register') }}" class="btn btn-warning rounded-pill">Start for free.</a>
+                        <a href="{{ url_for('sign_in') }}" class="btn btn-outline-warning rounded-pill">Sign In.</a>
+                        
+                    </div>
 
-        <!-- Start of navbar -->
-        <div class="navbar">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html">Nova</a>    
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li>
-                                <a class="nav-link active" aria-current="page" href="sign_in.html">Sign in</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="register.html">Sign up</a>
-                            </li>
-                                        
+                    <div class="col-md-7">
+                        <img src="{{ url_for('static', filename='images/hero_image.png') }}" alt="Hero Image" class="img-fluid">
+                    </div>
+                 
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- end of hero section -->
+
+        <!-- main section -->
+        <section class="main">
+            <div class="container">
+                <div class="main-start text-center">
+                    <p>WHY NOVA</p>
+                    <h1>Everything you need, <br> nothing you don't.</h1>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Private & Secure</h5>
+                                <p class="card-text">Your data stays yours. No ads, no tracking, no selling your profile to the highest bidder.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Real Community</h5>
+                                <p class="card-text">Connect with a curated community of thoughtful writers, builders, and creators.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Beautiful Writing</h5>
+                                <p class="card-text">A distraction-free canvas that makes your words the focus. Simple, fast, elegant.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- end of main section -->
+
+        <!-- Start of Ready section -->
+        <section class="ready">
+            <div class="container text-center">
+                <h1>Ready to join?</h1>
+                <p>Create a free account in under 30 seconds. No credit card required.</p>
+                <a href="{{ url_for('register') }}" class="btn btn-warning rounded-pill">Create your Account</a>
+            </div>
+        </section>
+        <!-- End of Ready section -->
+
+        <!-- Start of footer section -->
+        <section class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Nova.</h4>
+                        <p>A minimal space for thoughtful conversations.</p>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5>Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Sign in</a></li>
+                            <li><a href="#">Register</a></li>
                         </ul>
                     </div>
+                    
+                    <div class="col-md-6">
+                        <h5>Connect</h5>
+                        <div class="social-icons">
+                            <img src="{{ url_for('static', filename='images/social_media_icons.png') }}" alt="Social Media Icons" class="img-fluid">
+                            <img src="{{ url_for('static', filename='images/social_media_icons.png') }}" alt="Social Media Icons" class="img-fluid">
+                            <img src="{{ url_for('static', filename='images/social_media_icons.png') }}" alt="Social Media Icons" class="img-fluid">
+                        </div>                        
+                    </div>
+
+                            
                 </div>
-            </nav>    
-        </div>
-        
-        
-        <!-- end of navbar -->     
+            </div>
+            
+        </section>
+        <!-- End of footer section -->
 
 
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-         crossorigin="anonymous"></script>
-    </body>
-</html>
 {% endblock %}
