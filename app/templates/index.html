@@ -7,11 +7,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5" style="margin-top: 100px;">
-                        <h6  style="color: rgb(168, 143, 70);">Your Space to think out loud.</h6>
-                        <p class="big-txt" style="color: #fff;">Where ideas <br> find their voice.</p>
+                        <h6 class="special-txt-2">YOUR SPACE TO THINK OUT LOUD</h6>
+                        <p class="big-txt" style="color: #fff;">Where ideas <br> find their <span class="special-txt-1">voice.</span> </p>
                         <p class="fs-5" style="color: rgb(132, 140, 148);">Nova is a clean, distraction-free platform for sharing thoughts, sparking conversations, and connecting with people who think deeply.</p>
-                        <a href="{{ url_for('register') }}" class="btn btn-warning rounded-pill hover-float">Get Started</a>
-                        <a href="{{ url_for('sign_in') }}" class="btn btn-outline-light rounded-pill">Sign In.</a>
+                        <a href="{{ url_for('register') }}" class="btn-3 rounded-pill hover">Start for free</a>
+                        <a href="{{ url_for('sign_in') }}" class="btn-4 rounded-pill">Sign In </a>
                         <hr class="my-4" style="border-top: 1px solid rgb(132, 140, 148);">
                         <div class="d-flex align-items-center gap-5">
                             <div style="color: #fff;">
@@ -32,8 +32,8 @@
                         
                     </div>
 
-                    <div class="col-md-7">
-                        <img src="{{ url_for('static', filename='images/hero_image.png') }}" alt="Hero Image" class="img-fluid">
+                    <div class="col-md-7 hero-image">
+                        <img style="width: 1050px;" src="{{ url_for('static', filename='images/Hero-img.png') }}" alt="Hero Image" class="img-fluid">
                     </div>
                  
                 </div>
@@ -56,7 +56,7 @@
                     <div class="col-sm-4">
                         <div class="card">
                             <div class="card-body">
-                                <img src="{{ url_for('static', filename='images/private_secure.png') }}" alt="Private & Secure">
+                                <img class="card-img" src="{{ url_for('static', filename='images/Padlock.png') }}" alt="Private & Secure">
                                 <h5 class="card-title">Private & Secure</h5>
                                 <p style="color: rgb(94, 92, 112);" class="card-text">Your data stays yours. No ads, no tracking, no selling your profile to the highest bidder.</p>
                                 
@@ -67,7 +67,7 @@
                     <div class="col-sm-4">
                         <div class="card">
                             <div class="card-body">
-                                <img src="{{ url_for('static', filename='images/real_community.png') }}" alt="Real Community">
+                                <img class="card-img" src="{{ url_for('static', filename='images/group-icon.png') }}" alt="Real Community">
                                 <h5 class="card-title">Real Community</h5>
                                 <p style="color: rgb(94, 92, 112);" class="card-text">Connect with a curated community of thoughtful writers, builders, and creators.</p>
                                 
@@ -78,7 +78,7 @@
                     <div class="col-sm-4 mb-5">
                         <div class="card">
                             <div class="card-body">
-                                <img src="{{ url_for('static', filename='images/beautiful_writing.png') }}" alt="Beautiful Writing">
+                                <img class="card-img" src="{{ url_for('static', filename='images/PEN.png') }}" alt="Beautiful Writing">
                                 <h5 class="card-title">Beautiful Writing</h5>
                                 <p style="color: rgb(94, 92, 112);" class="card-text">A distraction-free canvas that makes your words the focus. Simple, fast, elegant.</p>
                                 
@@ -96,7 +96,7 @@
             <div class="container text-center" style="margin-top: 50px;">
                 <h1>Ready to join?</h1>
                 <p>Create a free account in under 30 seconds. No credit <br> card required.</p>
-                <a href="{{ url_for('register') }}" class="btn btn-warning btn-lg px-5 py-3 rounded-pill">Create your Account</a>
+                <a href="{{ url_for('register') }}" class="btn-5 hover px-5 py-3 rounded-pill">Create your Account</a>
             </div>
         </section>
         <!-- End of Ready section -->

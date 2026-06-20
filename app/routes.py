@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template
+from flask import render_template, flash, redirect, url_for
 from app.forms import SignInForm, RegisterForm
 from app import db, app
 from flask_login import login_user, logout_user, current_user, login_required
@@ -21,10 +21,10 @@ def sign_in():
         if user is None or not user.check_password(form.password.data):
             flash('Invalid email or password. Please try again.')  # Flash an error message for
             return render_template('sign_in.html', title='Sign In Page', form=form)
-            login_user(user, remember=form.remember_me.data)  # Log in the user
-            return redirect(url_for('index'))  # Redirect to index page after successful login
-        else:
-            flash('Invalid email or password. Please try again.')  # Flash an error message for invalid credentials
+        login_user(user, remember=form.remember_me.data)  # Log in the user
+        flash(f'Welcome, {user.username}! You have successfully signed in.')  # Flash a success message
+        return redirect(url_for('index'))  # Redirect to index page after successful login
+        
     return render_template('sign_in.html', title='Sign In Page', form=form)
 
 @app.route('/register', methods=['GET', 'POST'])

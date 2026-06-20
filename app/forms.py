@@ -6,7 +6,7 @@ from wtforms.validators import DataRequired, length, Email, EqualTo
 class SignInForm(FlaskForm):
     """Sign in form"""
     email = StringField('Email', render_kw={"placeholder": "you@example.com"}, validators=[DataRequired(), Email()])
-    password = PasswordField('Password', render_kw={"placeholder": "Create a password"}, validators=[DataRequired()])
+    password = PasswordField('Password', render_kw={"placeholder": "Type your password"}, validators=[DataRequired()])
     remember_me = BooleanField('Keep me signed in')
     submit = SubmitField('Sign In')
     
