@@ -48,7 +48,7 @@
             <div class="container">
                 <div class="main-start text-center">
                     <p style="color: rgb(207, 171, 81);">WHY NOVA</p>
-                    <h1>Everything you need, <br> nothing you don't.</h1>
+                    <h1 class="special-txt-3">Everything you need, <br> nothing you don't.</h1>
                     
                 </div>
                 
@@ -94,8 +94,8 @@
         <!-- Start of Ready section -->
         <section class="ready mt-5">
             <div class="container text-center" style="margin-top: 50px;">
-                <h1>Ready to join?</h1>
-                <p>Create a free account in under 30 seconds. No credit <br> card required.</p>
+                <h1 class="special-txt-3">Ready to join?</h1>
+                <p class="special-txt-4">Create a free account in under 30 seconds. No credit <br> card required.</p>
                 <a href="{{ url_for('register') }}" class="btn-5 hover px-5 py-3 rounded-pill">Create your Account</a>
             </div>
         </section>
@@ -106,12 +106,12 @@
             <div class="container" style="margin-top: 50px;">
                 <div class="row">
                     <div class="col-md-5">
-                        <p><strong>Nova.</strong></p>
-                        <p>A minimal space for thoughtful conversations.</p>
+                        <a class="navbar-brand-footer d-flex">Nova<div style="color: rgb(168, 143, 70);"><p>.</p></div></a>    
+                        <p class="footer-text">A minimal space for thoughtful conversations.</p>
                     </div>
 
-                    <div class="col-md-4">
-                        <p>Links</p>
+                    <div class="col-md-4 footer-links footer-text">
+                        <p class="footer-title">Links</p>
                         <ul class="list-unstyled">
                             <li><a href="{{ url_for('index') }}">Home</a></li>
                             <li><a href="{{ url_for('sign_in') }}">Sign in</a></li>
@@ -120,7 +120,7 @@
                     </div>
                     
                     <div class="col-md-3">
-                        <p>Connect</p>
+                        <p class="footer-title">Connect</p>
                         <div class="social-icons">
                             <img src="{{ url_for('static', filename='images/github-logo.png') }}" alt="Social Media Icons" class="img-fluid">
                             <img src="{{ url_for('static', filename='images/linkedin-logo.png') }}" alt="Social Media Icons" class="img-fluid">

@@ -25,9 +25,11 @@
     padding-left: 230px;
     
 }
+
+
 .btn-3 {
     background-color: rgb(201, 168, 76);
-    color: rgb(0, 0, 0);
+    color: RGB(13, 27, 42);
     border: none;
     border-radius: 15px;
     padding: 10px 20px;
@@ -81,10 +83,27 @@
     color: rgb(201, 168, 76);
  }
 
+
+
  .special-txt-2{
     font-size: 14px;
     color: rgb(201, 168, 76);
  }
+
+.special-txt-3 {
+    color: rgb(13, 27, 42);
+    font-family: serif;
+    font-size: 41.6px;
+    font-weight: 700;
+}
+
+.special-txt-4 {
+    color: RGBA(33, 37, 41, 0.75);
+    font-family: sans-serif;
+    font-size: 16px;
+
+}
+
 
 .small-text {
     font-size: 0.85rem;
@@ -101,18 +120,41 @@
 }
 
 .navbar-brand {
+    font-family: serif;
+    color: white !important;
+    font-weight: 700;
+    font-size: 25.6px;
+    letter-spacing: -0.512px;
+}
+
+.navbar-brand-footer {
     color: white !important;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    text-decoration: none;
 }
-.nav-link {
-    color: rgb(188, 184, 184) !important;
-    
+
+.btn-6 {
+    font-family: sans-serif;
+    font-size: 14.4px;
+    font-weight: bold;
+    color:#adadad;
+    text-decoration: none;
+    padding: 12px 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 20px;
+    border-radius: 6px;
+}
+
+.btn-6:hover {
+    background-color: rgb(23, 42, 61);
+    color:#adadad
 }
 
 .nav-links-pg-1 {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
 }
 
 .btn-1 {
@@ -122,6 +164,7 @@
     padding: 10px 10px;
     transition: all 0.3s ease;
     text-decoration: none;
+    padding: 7.2px 12px;
 }
 
 .btn-1:hover {
@@ -144,12 +187,14 @@
     transition: all 0.3s ease;
     padding: 5px 60px;
     font-size: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     font-family: sans-serif;
     font-weight: 600;
 }
 
 .btn-5:hover{
     transform: translateY(-2px);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     background-color: rgb(216, 192, 124);
     color: rgb(0, 0, 0);
 }
@@ -158,6 +203,21 @@
     background-color: rgb(248, 245, 239);
     border: none;
     border-radius: 15px;  
+}
+
+.card-title {
+    font-family: Playfair Display,serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.card-body {
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+
+
 }
 
 .card-img {
@@ -186,9 +246,28 @@
     width: 50px;
 }
 
+.footer-text {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 12.25px;
+    color: rgb(104, 114, 124);
+}
+
 .list-unstyled a {
     color: rgb(104, 114, 124);
     text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.list-unstyled a:hover {
+    color: rgb(186, 141, 61);
+}
+
+.footer-title {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 12.25px;
+    color: RGBA(255, 255, 255, 0.6);
 }
 
 .form-1 {
@@ -412,3 +491,25 @@
     padding: 0px;
     width: 550px;
 }
+
+/* PAGE 2 STYLES *//* PAGE 2 STYLES *//* PAGE 2 STYLES *//* PAGE 2 STYLES *//* PAGE 2 STYLES *//* PAGE 2 STYLES *//* PAGE 2 STYLES *//* PAGE 2 STYLES *//* PAGE 2 STYLES */
+
+.btn-7 {
+font-family: sans-serif;
+font-size: 14.4px;
+font-weight: 500;
+color:#adadad;
+background-color: rgb(32, 45, 59);
+text-decoration: none;
+padding: 7.2px 12px;
+padding-top: 10px;
+padding-bottom: 10px;
+margin-right: 20px;
+border-radius: 6px;
+}
+
+.btn-7:hover {
+background-color: rgb(24, 35, 48);
+color:#adadad
+}
+
