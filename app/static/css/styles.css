@@ -3,6 +3,10 @@
     font-style: italic;
     font-size: 0.9rem;
 }
+
+button {
+    all: unset;
+}
  
  .hover-float {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -498,7 +502,7 @@
 font-family: sans-serif;
 font-size: 14.4px;
 font-weight: 500;
-color:#adadad;
+color:#ffffff;
 background-color: rgb(32, 45, 59);
 text-decoration: none;
 padding: 7.2px 12px;
@@ -513,3 +517,74 @@ background-color: rgb(24, 35, 48);
 color:#adadad
 }
 
+.btn-dropdown_nav{
+    border-radius: 8px;
+    background-color: rgb(13, 27, 42);
+    color: #cacaca;
+    font-family: sans-serif;
+    font-size: 14.4px;
+    padding: 7.2px 12px;
+}
+
+.btn-dropdown_nav:hover {
+    background-color:rgb(32, 45, 59);
+    color:#adadad
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(248, 245, 239);
+    border-radius: 5px;
+}
+
+.post{
+    margin-left: px;
+    margin-top: 100px;
+    border-radius: 10px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.btn-post{
+    font-family: sans-serif;
+    font-size: 14.4px;
+    font-weight: 500;
+    color:#000000;
+    background-color: rgb(201, 168, 76);
+    text-decoration: none;
+    padding: 7.2px 40px;
+    margin-left: 600px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 20px;
+    border-radius: 6px;
+
+    transition: all 0.3s ease;
+}
+
+.btn-post:hover {
+    background-color: rgb(216, 192, 124);
+    transform: translateY(-4px);
+}
+
+.body-control {
+    background-color: rgb(248, 249, 250);
+    width: 100%;
+    height: 40px;
+    padding: 12px;
+    border: 0px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+}
+
+.body-control:focus {
+    outline: none;
+    border: 4px solid rgb(184, 227, 250);
+}

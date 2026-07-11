@@ -1,4 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
+     <div class="container mt-5">
+        <div class="row">
+            <div class="post col-md-8 offset-md-2">
+                <form method="POST" action="{{ url_for('feed') }}">
+                    
+                        
+                    
+                    
+                    {{ form.hidden_tag() }}
+                    <div class="mb-3 d-flex align-items-center">
+                        <img src="{{ current_user.avatar(50) }}" alt="Avatar" class="rounded-circle"> <br> {{ form.body(class="body-control ms-3", rows=3, id="body") }}
+                    </div>
 
+                    <small style="margin-left: 70px;" class="text-muted">
+                        <span id="letterCount">0</span>/500
+                    </small>
+                    <button type="submit" class="btn-post rounded-pill">{{ form.submit.label.text }}</button>
+                </form>
+            </div>
+
+            <div>
+                
+            </div>
+                
+            
+        </div>
+        <script>
+            const textarea = document.getElementById("body");
+            const letterCount = document.getElementById("letterCount");
+
+            textarea.addEventListener("input", function() {
+                const letters = this.value.replace(/\s/g, "");
+                letterCount.textContent = letters.length;
+            });
+        </script>
+     </div>
 {% endblock %}

@@ -1,9 +1,16 @@
 from app import app
 from flask import render_template, flash, redirect, url_for
-from app.forms import SignInForm, RegisterForm
+from app.forms import SignInForm, RegisterForm, PostForm
 from app import db, app
 from flask_login import login_user, logout_user, current_user, login_required
-from app.models import User
+from app.models import User, Post
+from datetime import datetime
+
+@app.before_request
+def before_request():
+    if current_user.is_authenticated:
+        current_user.last_seen = datetime.utcnow()
+        db.session.commit()
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
@@ -49,7 +56,9 @@ def logout():
 @app.route('/feed')
 def feed():
     """Feed URL"""
-    return render_template('feed.html', title='Feed')
+    form = PostForm()
+    posts = Post.query.all()  # Fetch all posts from the database
+    return render_template('feed.html', title='Feed', posts=posts, form=form)
 
 @app.route('/profile')
 def profile():

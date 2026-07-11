@@ -19,3 +19,8 @@ class RegisterForm(FlaskForm):
     password = PasswordField('Password', render_kw={"placeholder": "Min. 6 characters"}, validators=[DataRequired(), length(min=6, max=100)])
     confirm_password = PasswordField('Confirm Password', render_kw={"placeholder": "Confirm your password"}, validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Register')
+
+class PostForm(FlaskForm):
+    """Post form"""
+    body = StringField('Post', render_kw={"placeholder": "What's on your mind? {{ current_user.username }} "}, validators=[DataRequired(), length(min=1, max=500)])
+    submit = SubmitField('Post')
