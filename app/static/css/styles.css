@@ -32,6 +32,9 @@ button {
 
 
 .btn-3 {
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 15.2px;
     background-color: rgb(201, 168, 76);
     color: RGB(13, 27, 42);
     border: none;
@@ -42,18 +45,21 @@ button {
     margin-right: 5px;
     text-align: center;
     display: inline-block;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
     padding: 15px 40px;
 }
 
 .btn-3:hover {
-    transform: translateY(-4px);
-    background-color: rgb(201, 168, 76);
+    transform: translateY(-3px);
+    background-color: rgb(158, 140, 90);
     color: rgb(0, 0, 0);
   
 }
 
  .btn-4 {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 15.2px;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(207, 202, 202);
     border: 1.45px solid;
@@ -72,6 +78,12 @@ button {
     border-color: #ffffff;
  }
  }
+
+.statistics{
+    font: sans-serif;
+    font-size: 25.6px;
+    font-weight: 700;
+}
 
  .big-txt {
     font-size: 67.2px;
@@ -191,14 +203,14 @@ button {
     transition: all 0.3s ease;
     padding: 5px 60px;
     font-size: 20px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     font-family: sans-serif;
     font-weight: 600;
 }
 
 .btn-5:hover{
     transform: translateY(-2px);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     background-color: rgb(216, 192, 124);
     color: rgb(0, 0, 0);
 }
@@ -242,12 +254,10 @@ button {
     
 }
 
-.social-icons {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
+.btn-social{
+    margin-right: 10px;
+    width: 30px;
     height: 30px;
-    width: 50px;
 }
 
 .footer-text {
@@ -282,9 +292,10 @@ button {
     padding: 0px;
 }
 
+
+
 .sign-in-section {
-    background-color: rgb(16, 30, 46);
-    padding: 60px 0;
+    margin-right: 0px;
 }
 
 .form-title {
@@ -298,6 +309,7 @@ button {
 }
 
 .form-body {
+    text-align: left;
     padding: 30px;
     margin-left: 10px;
 }
@@ -313,12 +325,11 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 5px 10px;
     margin-top: 20px;
     text-align: center;
     font-weight: bold;
     transition: all 0.3s ease;
-    ;
 }
 
 .btn-2:hover {
@@ -329,11 +340,11 @@ button {
 }
 
 .form-control {
-    background-color: rgb(232, 240, 254);
+    background-color: rgb(255, 255, 255);
     width: 100%;
     height: 40px;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1.4px solid #e1e1e1;
     border-radius: 10px;
     font-size: 16px;
     font-family: Arial, sans-serif;
@@ -505,7 +516,7 @@ font-weight: 500;
 color:#ffffff;
 background-color: rgb(32, 45, 59);
 text-decoration: none;
-padding: 7.2px 12px;
+padding: 5px 12px;
 padding-top: 10px;
 padding-bottom: 10px;
 margin-right: 20px;
@@ -517,13 +528,19 @@ background-color: rgb(24, 35, 48);
 color:#adadad
 }
 
+.nav-icon {
+    width: 15px;
+    height: 15px;
+    margin-bottom: 6px;
+    padding-bottom: 0px;
+}
 .btn-dropdown_nav{
     border-radius: 8px;
     background-color: rgb(13, 27, 42);
     color: #cacaca;
     font-family: sans-serif;
     font-size: 14.4px;
-    padding: 7.2px 12px;
+    padding: 10.2px 12px;
 }
 
 .btn-dropdown_nav:hover {
@@ -532,9 +549,32 @@ color:#adadad
 }
 
 .dropdown-menu {
+    padding-right: 0px;
+    margin-right: 30px;
     border: none;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.dropdown-item {
+    margin-left: px;
+    font-family: sans-serif;
+    font-size: 14.08px;
+    padding: 6px 30px;
+}
+
+.dropdown-item-exit {
+    text-decoration: none;
+    margin-left: px;
+    font-family: sans-serif;
+    font-size: 14.08px;
+    padding: 6px 30px;
+}
+
+.dropdown-item-exit:hover {
+    background-color: rgb(249, 230, 229);
+    border-radius: 5px;
 }
 
 .dropdown-item:hover {
@@ -542,22 +582,43 @@ color:#adadad
     border-radius: 5px;
 }
 
+.dropdown-icon {
+
+    margin-bottom: 6px;
+    width: 15px;
+    height: 15px;
+
+}
+
+
 .post{
-    margin-left: px;
+    margin-left: 100px;
     margin-top: 100px;
+    padding: 24px;
+    height: 180px;
     border-radius: 10px;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.five-hundred {
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color:rgb(117, 125, 133);
+    margin-left: 70px;
+    margin-bottom: 40px;
+    padding-top: 10px;
 }
 
 .btn-post{
     font-family: sans-serif;
-    font-size: 14.4px;
-    font-weight: 500;
-    color:#000000;
+    font-size: 14px;
+    font-weight: 600;
+    color:rgb(13, 27, 42);
     background-color: rgb(201, 168, 76);
     text-decoration: none;
-    padding: 7.2px 40px;
-    margin-left: 600px;
+    padding: 8.8px 24px;
+    margin-left: 540px;
     margin-bottom: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -587,4 +648,427 @@ color:#adadad
 .body-control:focus {
     outline: none;
     border: 4px solid rgb(184, 227, 250);
+}
+.body-control::placeholder {
+    color: rgb(91, 95, 99);
+    font-size: 15.2px;
+    font-family: sans-serif;
+}
+
+.view-profile-card{
+    margin-top: 100px;
+    padding: 24px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.btn-view-profile{
+    margin-left: 23px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color:rgb(117, 125, 133);
+    border: 1px solid rgb(117, 125, 133);
+    padding: 7px 60px;
+}
+
+.btn-view-profile:hover{
+    background-color: rgb(117, 125, 133);
+    color:white;
+}
+
+.quick-links-card{
+    justify-content: center;
+    padding: 24px;
+    height: 140px;
+    margin-top: 30px;
+    margin-left: 135px;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.QL-title{
+    color:rgba(33, 37, 41, 0.75);
+    font-family: "DM Sans", sans-serif;
+    font-size: 11.52px;
+    letter-spacing: 0.576px;
+    font-weight: 600;
+}
+
+.btn-quick-link_1{
+    margin-top: 10px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color:rgb(108, 117, 125);
+
+    transition: all 0.3s ease;
+}
+
+.btn-quick-link_1:hover{
+    color:rgb(151, 155, 158);
+}
+
+.btn-quick-link_2{
+    margin-top: 5px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color:rgb(220, 53, 69);
+
+    transition: all 0.3s ease;
+}
+
+.btn-quick-link_2:hover{
+    color:rgb(214, 120, 120);
+}
+
+.footer-pg2 {
+    margin-top: 100px;
+    background-color: rgb(13, 27, 42);
+    color: white;
+    padding: 20px 0;
+    
+}
+
+.post-table {
+    margin-left: 90px;
+    width: 100%;
+    height: 140px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 1px 3px 6px 0px;
+
+    transition: all 0.2s ease;
+}
+
+.post-table:hover {
+    transform: translateY(-2px);
+    box-shadow: rgba(99, 99, 99, 0.2) 1px 9px 16px 0px;
+}
+
+.post-avatar {
+    width: 45px;
+    height: 45px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-author {
+    margin-top: 25px;
+    margin-left: 10px;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.post-names{
+    color: rgb(13, 27, 42);
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.post-username{
+    color: rgba(33, 37, 41, 0.75);
+    font-size:15px;
+    font-weight: 400;
+}
+
+.post-body{
+    color: rgb(44, 44, 44);
+    margin-top: 5px;
+    margin-left: 10px;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.post-timestamp{
+    margin-top: -55px;
+    margin-left: 400px;
+    color: rgba(33, 37, 41, 0.75);
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Profile page styles *//* Profile page styles *//* Profile page styles *//* Profile page styles *//* Profile page styles */
+
+.profile-card{
+    height: 220px;
+    width : 740px;
+    margin-top: 115px;
+    padding: 0px;
+    margin-left: 210px;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.profile-card-background{
+    height: 50%;
+    width: 100%;
+    background-image: linear-gradient(
+    135deg,
+    #0a1c31 0%,    /* Deep dark blue (matches background) */
+    hsl(215, 37%, 21%) 40%,   /* Fading dark navy transition */
+    #25425a 65%,   /* Mid olive-gold blend */
+    rgb(181,156,78) 100%   /* Final warm gold/khaki end */
+  );
+    border-radius: 10px 10px 0px 0px;
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid #ffffff; /* White border creates a clean separation */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  
+  /* Pull the avatar up over the boundary */
+  margin-top: -40px; /* Half of its height */
+  margin-left: 25px; /* Adjust horizontal position */
+  margin-bottom: 0px;
+  
+  position: relative; /* Ensures it stays layered on top */
+  z-index: 2;
+}
+
+.btn-edit-profile{
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color:rgb(108,117,125);
+    border: 1px solid rgb(108,117,125);
+    margin-left: 330px;
+    margin-top: 30px;
+    padding: 4px 25px;
+}
+
+.btn-edit-profile:hover{
+    background-color: rgb(108,117,125);
+    color:white;
+}
+
+.img-edit-profile-btn {
+    margin-left: 0px;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle; /* Aligns the icon with the text */
+}
+
+.btn-edit-profile:hover .img-edit-profile-btn {
+    filter: brightness(0) invert(1); /* Invert the image color to white */
+}
+
+
+
+
+.profile-posts{
+    margin-left: 210px;
+    margin-top: 55px;
+}
+
+.profile-post-table {
+    margin-left: 240px;
+    width: 700px;
+    height: 110px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 1px 3px 6px 0px;
+
+    transition: all 0.2s ease;
+}
+
+.profile-post-table:hover {
+    transform: translateY(-2px);
+    box-shadow: rgba(99, 99, 99, 0.2) 3px 9px 16px 4px;
+}
+
+.profile-post-body{
+    color: rgb(44, 44, 44);
+    margin-top: 20px;
+    margin-left: 20px;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.profile-post-timestamp{
+    color: rgba(33, 37, 41, 0.75);
+    margin-left: 20px;
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Edit Profile Styles *//* Edit Profile Styles *//* Edit Profile Styles *//* Edit Profile Styles *//* Edit Profile Styles *//* Edit Profile Styles */
+
+.hero-edit-profile{
+    margin-top: 110px;
+    margin-left: 330px;
+}
+
+.btn-back{
+    text-decoration: none;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: rgb(108,117,125);
+    border: 1px rgb(108,117,125) solid;
+    border-radius: 40px;
+    padding: 7px 10px;
+    margin-top: 20px;
+}
+
+.btn-back:hover{
+    color: white;
+    background-color: rgb(108, 117, 125);
+
+}
+
+.btn-back-icon{
+    width: 15px;
+    height: 15px;
+}
+
+.btn-back:hover .btn-back-icon{
+    filter: brightness(0) invert(1);
+}
+
+.main-edit-profile{
+    margin-left: 330px;
+}
+
+.edit-profile-card{
+    border-radius: 10px;
+    padding: 50px;
+    height: 780px;
+    margin-bottom: 50px;
+    width: 600px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;;
+}
+
+.btn-change-img-icon{
+    width: 15px;
+    height: 15px;
+}
+
+.btn-change-img{
+    text-decoration: none;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: rgb(108,117,125);
+    border: 1px rgb(108,117,125) solid;
+    border-radius: 40px;
+    padding: 7px 20px;
+    margin-left: 175px;
+    
+}
+
+.btn-change-img:hover{
+    background-color: rgb(108,117,125);
+    color: white;
+}
+
+.btn-change-img:hover .btn-change-img-icon{
+    filter: brightness(0) invert(1);
+}
+
+.name-fields-edit-profile{
+    display: flex;
+    gap: 30px;
+}
+
+.field-ep-1{
+    margin-left: 0px;
+}
+
+.field-ep-2{
+    margin-right: -50px;
+}
+
+.form-label-edit-profile{
+    margin-left: -30px;
+    margin-top: 20px;
+}
+
+.form-control-edit-profile{
+    border-radius: 5px;
+    border: 1px rgb(212, 215, 217) solid;
+    height: 35px;
+    margin-top: 7px;
+    margin-left: -30px;
+}
+
+.form-bio{
+    border-radius: 5px;
+    border: 1px rgb(212, 215, 217) solid;
+    height: 70px;
+    width: 480px;
+    margin-top: 7px;
+    margin-bottom: 30px;
+    margin-left: -30px;
+}
+
+.btn-save-changes{
+    background-color: rgb(201,168,76);
+    text-decoration: none;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    border: 1px;
+    border-radius: 40px;
+    padding: 12px 55px;
+    margin-left: -30px;
+    margin-top: 20px;
+
+    transition: all 0.3s ease;
+}
+
+.btn-save-changes:hover{
+    background-color: rgb(216,192,124);
+    transform: translateY(-2px);
+}
+
+.btn-cancel-changes{
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: rgb(108,117,125);
+    border: 1px rgb(108,117,125) solid;
+    border-radius: 40px;
+    padding: 14px 25px;
+    margin-top: 20px;
+
+}
+
+.btn-cancel-changes:hover{
+    background-color: rgb(108,117,125);
+    color: white;
+}
+
+.form-label-location{
+    margin-left: -480px;
+}
+
+.reset_password{
+    background-color: rgb(13,27,42);
+}
+
+.form_reset_password_body{
+
+
 }

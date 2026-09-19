@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <section class="sign-in-section">
+<div style="background-color: rgb(16, 30, 46); padding-top: 50px; padding-bottom: 40px;">
+    <section style="margin-right: 120px;">
         <div class="row mt-5">
             <div class="col-md-4">
                 <!-- Empty column -->
@@ -78,38 +79,38 @@
         </div>
     </section>
     <!-- End of sign in section -->
+</div>
+    
 
-    <!-- Start of footer section -->
-        <section class="footer">
-            <div class="container" style="margin-top: 50px;">
-                <div class="row">
-                    <div class="col-md-5">
-                        <p><strong>Nova.</strong></p>
-                        <p>A minimal space for thoughtful conversations.</p>
-                    </div>
-
-                    <div class="col-md-4">
-                        <p>Links</p>
-                        <ul class="list-unstyled">
-                            <li><a href="{{ url_for('index') }}">Home</a></li>
-                            <li><a href="{{ url_for('sign_in') }}">Sign in</a></li>
-                            <li><a href="{{ url_for('register') }}">Register</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="col-md-3">
-                        <p>Connect</p>
-                        <div class="social-icons">
-                            <img src="{{ url_for('static', filename='images/github-logo.png') }}" alt="Social Media Icons" class="img-fluid">
-                            <img src="{{ url_for('static', filename='images/linkedin-logo.png') }}" alt="Social Media Icons" class="img-fluid">
-                            <img src="{{ url_for('static', filename='images/x-logo.png') }}" alt="Social Media Icons" class="img-fluid">
-                        </div>                        
-                    </div>
-
-                            
+<!-- Start of footer section -->
+    <section class="footer">
+        <div class="container" style="margin-top: 50px;">
+            <div class="row">
+                <div class="col-md-5">
+                    <p><strong>Nova.</strong></p>
+                    <p>A minimal space for thoughtful conversations.</p>
                 </div>
+                <div class="col-md-4">
+                    <p>Links</p>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('sign_in') }}">Sign in</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3">
+                    <p>Connect</p>
+                    <div class="d-flex justify-content-start">
+                        <a class="btn-social" href="#"><img src="{{ url_for('static', filename='images/github-logo.png') }}" alt="GitHub" class="img-fluid"></a>
+                        <a class="btn-social" href="#"><img src="{{ url_for('static', filename='images/linkedin-logo.png') }}" alt="LinkedIn" class="img-fluid"></a>
+                        <a class="btn-social" href="#"><img src="{{ url_for('static', filename='images/x-logo.png') }}" alt="X" class="img-fluid"></a>
+                    </div>                               
+                </div>
+                        
             </div>
-            
-        </section>
-        <!-- End of footer section -->
+        </div>
+        
+    </section>
+<!-- End of footer section -->
 {% endblock %}

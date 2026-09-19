@@ -1,4 +1,114 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<section class="hero-edit-profile">
+
+    <div class="hero-edit-profile-items">
+        <a class="btn-back" href="{{ url_for('profile') }}"> <img class="btn-back-icon" src="{{ url_for('static', filename='images/grey-arrow-left-icon.png') }}" alt="">Back</a>
+
+        <p style=" margin-top: -26px; margin-left: 80px; color: rgb(26, 26, 46); font-size: 24px; font-family: sans-serif; font-weight: 500;">  Edit Profile</p>
+    </div>
+</section>
+
+<section class="main-edit-profile">
+    <div class="edit-profile-card">
+        <div>
+            <img style=" margin-bottom: 20px; border-radius: 330px; box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;" src="{{current_user.avatar(80) }}" alt="Avatar">
+        </div>
+
+        <div>
+            <a class="btn-change-img" href=""> <img class="btn-change-img-icon" src="{{ url_for('static', filename='images/grey-camera.png') }}" alt=""> Change Photo</a>
+        </div>
+
+        <div class="form-body">
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <div class="name-fields-edit-profile">
+                    <div class="field-ep-1">
+                        {{ form.first_name.label(class="form-label-edit-profile") }}
+                        {{ form.first_name(size=25, class="form-control-edit-profile") }}
+                        {% for error in form.first_name.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+
+                    <div class="field-ep-2">
+                        {{ form.last_name.label(class="form-label-edit-profile") }}
+                        {{ form.last_name(size=25, class="form-control-edit-profile") }}
+                        {% for error in form.last_name.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                {{ form.username.label(class="form-label-edit-profile") }} <br>
+                {{ form.username(size=60, class="form-control-edit-profile") }}
+                {% for error in form.username.errors %}
+                    <span style="color: red;">[{{ error }}] <br></span>
+                {% endfor %}
+
+                {{ form.bio.label(class="form-label-edit-profile") }} <br>
+                {{ form.bio(size=60, class="form-bio") }}
+                {% for error in form.bio.errors %}
+                    <span style="color: red;">[{{ error }}] <br></span>
+                {% endfor %}
+
+                {{ form.location.label(class="form-label-location") }} <br>
+                {{ form.location(size=60, class="form-control-edit-profile") }}
+                {% for error in form.location.errors %}
+                    <span style="color: red;">[{{ error }}] <br></span>
+                {% endfor %}
+
+                {{ form.website.label(class="form-label-edit-profile") }} <br>
+                {{ form.website(size=60, class="form-control-edit-profile") }}
+                {% for error in form.website.errors %}
+                    <span style="color: red;">[{{ error }}] <br></span>
+                {% endfor %}
+
+                <div class="form-submit-edit-profile">
+                    {{ form.submit(class="btn-save-changes") }} <a class="btn-cancel-changes" href="{{ url_for('profile') }}">Cancel</a>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+        
+</section>
+
+<!-- Start of footer section -->
+        <section class="footer-pg2">
+            <div class="container" style="margin-top: 50px;">
+                <div class="row">
+                    <div class="col-md-5">
+                        <a class="navbar-brand-footer d-flex">Nova<div style="color: rgb(168, 143, 70);"><p>.</p></div></a>    
+                        <p class="footer-text">A minimal space for thoughtful conversations.</p>
+                    </div>
+
+                    <div class="col-md-4 footer-links footer-text">
+                        <p class="footer-title">Links</p>
+                        <ul class="list-unstyled">
+                            <li><a href="{{ url_for('feed') }}">Feed</a></li>
+                            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <p class="footer-title">Connect</p>
+                        <div class="d-flex justify-content-start">
+                            <a class="btn-social" href="#"><img src="{{ url_for('static', filename='images/github-logo.png') }}" alt="GitHub" class="img-fluid"></a>
+                            <a class="btn-social" href="#"><img src="{{ url_for('static', filename='images/linkedin-logo.png') }}" alt="LinkedIn" class="img-fluid"></a>
+                            <a class="btn-social" href="#"><img src="{{ url_for('static', filename='images/x-logo.png') }}" alt="X" class="img-fluid"></a>
+                        </div>                        
+                    </div>
+
+                            
+                </div>
+            </div>
+            
+        </section>
+
+
+
 {% endblock %}

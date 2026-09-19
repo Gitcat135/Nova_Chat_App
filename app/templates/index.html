@@ -2,138 +2,125 @@
 
 {% block content %}
     
-        <!-- Start of hero section -->
-         <section class="hero-index">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5" style="margin-top: 100px;">
-                        <h6 class="special-txt-2">YOUR SPACE TO THINK OUT LOUD</h6>
-                        <p class="big-txt" style="color: #fff;">Where ideas <br> find their <span class="special-txt-1">voice.</span> </p>
-                        <p class="fs-5" style="color: rgb(132, 140, 148);">Nova is a clean, distraction-free platform for sharing thoughts, sparking conversations, and connecting with people who think deeply.</p>
-                        <a href="{{ url_for('register') }}" class="btn-3 rounded-pill hover">Start for free</a>
-                        <a href="{{ url_for('sign_in') }}" class="btn-4 rounded-pill">Sign In </a>
-                        <hr class="my-4" style="border-top: 1px solid rgb(132, 140, 148);">
-                        <div class="d-flex align-items-center gap-5">
-                            <div style="color: #fff;">
-                                <h4>10k+</h4>
-                                <p class="small-text">MEMBERS</p>
-                            </div>
-
-                            <div style="color: #fff;">
-                                <h4>50k+</h4>
-                                <p class="small-text">POSTS</p>
-                            </div>
-
-                            <div style="color: #fff;">
-                                <h4>100%</h4>
-                                <p class="small-text">AD-FREE</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-                    <div class="col-md-7 hero-image">
-                        <img style="width: 1050px;" src="{{ url_for('static', filename='images/Hero-img.png') }}" alt="Hero Image" class="img-fluid">
-                    </div>
-                 
-                </div>
-            </div>
-        </section>
-        
-        
-        <!-- end of hero section -->
-
-        <!-- main section -->
-        <section class="main mt-5">
-            <div class="container">
-                <div class="main-start text-center">
-                    <p style="color: rgb(207, 171, 81);">WHY NOVA</p>
-                    <h1 class="special-txt-3">Everything you need, <br> nothing you don't.</h1>
-                    
-                </div>
-                
-                <div class="row" style="margin-top: 50px;">
-                    <div class="col-sm-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <img class="card-img" src="{{ url_for('static', filename='images/Padlock.png') }}" alt="Private & Secure">
-                                <h5 class="card-title">Private & Secure</h5>
-                                <p style="color: rgb(94, 92, 112);" class="card-text">Your data stays yours. No ads, no tracking, no selling your profile to the highest bidder.</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <img class="card-img" src="{{ url_for('static', filename='images/group-icon.png') }}" alt="Real Community">
-                                <h5 class="card-title">Real Community</h5>
-                                <p style="color: rgb(94, 92, 112);" class="card-text">Connect with a curated community of thoughtful writers, builders, and creators.</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 mb-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <img class="card-img" src="{{ url_for('static', filename='images/PEN.png') }}" alt="Beautiful Writing">
-                                <h5 class="card-title">Beautiful Writing</h5>
-                                <p style="color: rgb(94, 92, 112);" class="card-text">A distraction-free canvas that makes your words the focus. Simple, fast, elegant.</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!-- end of main section -->
-
-        <!-- Start of Ready section -->
-        <section class="ready mt-5">
-            <div class="container text-center" style="margin-top: 50px;">
-                <h1 class="special-txt-3">Ready to join?</h1>
-                <p class="special-txt-4">Create a free account in under 30 seconds. No credit <br> card required.</p>
-                <a href="{{ url_for('register') }}" class="btn-5 hover px-5 py-3 rounded-pill">Create your Account</a>
-            </div>
-        </section>
-        <!-- End of Ready section -->
-
-        <!-- Start of footer section -->
-        <section class="footer">
-            <div class="container" style="margin-top: 50px;">
-                <div class="row">
-                    <div class="col-md-5">
-                        <a class="navbar-brand-footer d-flex">Nova<div style="color: rgb(168, 143, 70);"><p>.</p></div></a>    
-                        <p class="footer-text">A minimal space for thoughtful conversations.</p>
-                    </div>
-
-                    <div class="col-md-4 footer-links footer-text">
-                        <p class="footer-title">Links</p>
-                        <ul class="list-unstyled">
-                            <li><a href="{{ url_for('index') }}">Home</a></li>
-                            <li><a href="{{ url_for('sign_in') }}">Sign in</a></li>
-                            <li><a href="{{ url_for('register') }}">Register</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="col-md-3">
-                        <p class="footer-title">Connect</p>
-                        <div class="social-icons">
-                            <img src="{{ url_for('static', filename='images/github-logo.png') }}" alt="Social Media Icons" class="img-fluid">
-                            <img src="{{ url_for('static', filename='images/linkedin-logo.png') }}" alt="Social Media Icons" class="img-fluid">
-                            <img src="{{ url_for('static', filename='images/x-logo.png') }}" alt="Social Media Icons" class="img-fluid">
-                        </div>                        
-                    </div>
-
-                            
-                </div>
-            </div>
+   <!-- Start of hero section -->
+    <section class="hero-index">
+       <div class="container">
+           <div class="row">
+               <div class="col-md-5" style="margin-top: 100px;">
+                   <h6 class="special-txt-2">YOUR SPACE TO THINK OUT LOUD</h6>
+                   <p class="big-txt" style="color: #fff;">Where ideas <br> find their <span class="special-txt-1">voice.</span> </p>
+                   <p class="fs-5" style="color: rgb(132, 140, 148);">Nova is a clean, distraction-free platform for sharing thoughts, sparking conversations, and connecting with people who think deeply.</p>
+                   <a href="{{ url_for('register') }}" class="btn-3 rounded-pill hover">Start for free</a>
+                   <a href="{{ url_for('sign_in') }}" class="btn-4 rounded-pill">Sign In </a>
+                   <hr class="my-4" style="border-top: 1px solid rgb(132, 140, 148);">
+                   <div class="d-flex align-items-center gap-5">
+                       <div style="color: #fff;">
+                           <h4 class="statistics">10k+</h4>
+                           <p class="small-text">MEMBERS</p>
+                       </div>
+                       <div style="color: #fff;">
+                           <h4 class="statistics">50k+</h4>
+                           <p class="small-text">POSTS</p>
+                       </div>
+                       <div style="color: #fff;">
+                           <h4 class="statistics">100%</h4>
+                           <p class="small-text">AD-FREE</p>
+                       </div>
+                   </div>
+                   
+               </div>
+               <div class="col-md-7 hero-image">
+                   <img style="width: 1050px;" src="{{ url_for('static', filename='images/Hero-img.png') }}" alt="Hero Image" class="img-fluid">
+               </div>
             
-        </section>
-        <!-- End of footer section -->
-
-
+           </div>
+       </div>
+   </section>
+   
+   
+   <!-- end of hero section -->
+   <!-- main section -->
+   <section class="main mt-5">
+       <div class="container">
+           <div class="main-start text-center">
+               <p style="color: rgb(207, 171, 81);">WHY NOVA</p>
+               <h1 class="special-txt-3">Everything you need, <br> nothing you don't.</h1>
+               
+           </div>
+           
+           <div class="row" style="margin-top: 50px;">
+               <div class="col-sm-4">
+                   <div class="card">
+                       <div class="card-body">
+                           <img class="card-img" src="{{ url_for('static', filename='images/uis--padlock.png') }}" alt="Private & Secure">
+                           <h5 class="card-title">Private & Secure</h5>
+                           <p style="color: rgb(94, 92, 112);" class="card-text">Your data stays yours. No ads, no tracking, no selling your profile to the highest bidder.</p>
+                           
+                       </div>
+                   </div>
+               </div>
+               <div class="col-sm-4">
+                   <div class="card">
+                       <div class="card-body">
+                           <img class="card-img" src="{{ url_for('static', filename='images/Group.png') }}" alt="Real Community">
+                           <h5 class="card-title">Real Community</h5>
+                           <p style="color: rgb(94, 92, 112);" class="card-text">Connect with a curated community of thoughtful writers, builders, and creators.</p>
+                           
+                       </div>
+                   </div>
+               </div>
+               <div class="col-sm-4 mb-5">
+                   <div class="card">
+                       <div class="card-body">
+                           <img class="card-img" src="{{ url_for('static', filename='images/uil--pen.png') }}" alt="Beautiful Writing">
+                           <h5 class="card-title">Beautiful Writing</h5>
+                           <p style="color: rgb(94, 92, 112);" class="card-text">A distraction-free canvas that makes your words the focus. Simple, fast, elegant.</p>
+                           
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+   <!-- end of main section -->
+   <!-- Start of Ready section -->
+   <section class="ready mt-5">
+       <div class="container text-center" style="margin-top: 50px;">
+           <h1 class="special-txt-3">Ready to join?</h1>
+           <p class="special-txt-4">Create a free account in under 30 seconds. No credit <br> card required.</p>
+           <a href="{{ url_for('register') }}" class="btn-5 hover px-5 py-3 rounded-pill">Create your Account <img class="card-img align-center" src="{{ url_for('static', filename='images/arrow-right.png') }}" alt="Arrow Icon" class="img-fluid"></a>
+       </div>
+   </section>
+   <!-- End of Ready section -->
+   <!-- Start of footer section -->
+   <section class="footer">
+       <div class="container" style="margin-top: 50px;">
+           <div class="row">
+               <div class="col-md-5">
+                   <a class="navbar-brand-footer d-flex">Nova<div style="color: rgb(168, 143, 70);"><p>.</p></div></a>    
+                   <p class="footer-text">A minimal space for thoughtful conversations.</p>
+               </div>
+               <div class="col-md-4 footer-links footer-text">
+                   <p class="footer-title">Links</p>
+                   <ul class="list-unstyled">
+                       <li><a href="{{ url_for('index') }}">Home</a></li>
+                       <li><a href="{{ url_for('sign_in') }}">Sign in</a></li>
+                       <li><a href="{{ url_for('register') }}">Register</a></li>
+                   </ul>
+               </div>
+               
+               <div class="col-md-3">
+                   <p class="footer-title">Connect</p>
+                   <div class="d-flex justify-content-start">
+                       <a class="btn-social" href="#"><img src="{{ url_for('static', filename='images/github-logo.png') }}" alt="GitHub" class="img-fluid"></a>
+                       <a class="btn-social" href="#"><img src="{{ url_for('static', filename='images/linkedin-logo.png') }}" alt="LinkedIn" class="img-fluid"></a>
+                       <a class="btn-social" href="#"><img src="{{ url_for('static', filename='images/x-logo.png') }}" alt="X" class="img-fluid"></a>
+                   </div>        
+               </div>
+                       
+           </div>
+       </div>
+       
+   </section>
+   <!-- End of footer section -->
 {% endblock %}

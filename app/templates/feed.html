@@ -2,26 +2,74 @@
 {% block content %}
      <div class="container mt-5">
         <div class="row">
-            <div class="post col-md-8 offset-md-2">
-                <form method="POST" action="{{ url_for('feed') }}">
-                    
-                        
-                    
-                    
+            <div class="post col-md-7">
+                
+                <form action="" method="post" novalidate>
                     {{ form.hidden_tag() }}
-                    <div class="mb-3 d-flex align-items-center">
-                        <img src="{{ current_user.avatar(50) }}" alt="Avatar" class="rounded-circle"> <br> {{ form.body(class="body-control ms-3", rows=3, id="body") }}
-                    </div>
-
-                    <small style="margin-left: 70px;" class="text-muted">
-                        <span id="letterCount">0</span>/500
-                    </small>
-                    <button type="submit" class="btn-post rounded-pill">{{ form.submit.label.text }}</button>
-                </form>
+                        <div class="mb-3 d-flex align-items-center">
+                            <img src="{{ current_user.avatar(50) }}" alt="Avatar" class="rounded-circle"> <br>
+                            {{ form.body(class="body-control ms-3", rows=3, id="body", placeholder="What's on your mind, " ~ (current_user.first_name or "there") ~ "?") }}
+                        </div>
+                        <div>
+                            <button type="submit" class="btn-post rounded-pill">{{ form.submit.label.text }}</button>
+                        </div>                 
+                </form> 
+                <small class="text-muted five-hundred">
+                    <span id="letterCount">0</span>/500
+                </small>
             </div>
 
-            <div>
-                
+            <div class="col-md-3 view-profile-card">
+                <div class="mb-3">
+                    <img src="{{ current_user.avatar(70) }}" alt="Avatar" class="rounded-circle">
+                </div>
+
+                <div class="text-center mb-3">
+                    <div style=" font-family: sans-serif; font-size: 16px; font-weight: 600; color: rgb(33, 37, 41);"> {{ current_user.first_name }} {{ current_user.last_name }} </div> <br>
+                    <div style="color: rgba(33, 37, 41, 0.75); font-size:14px; font-weight: 400;">@{{ current_user.username }}</div>
+                </div>
+
+                <a href="{{ url_for('profile') }}" class="btn-view-profile rounded-pill">View Profile</a>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-7">
+                    {% for post in posts %}
+                        {% if post %}
+                            <table class="post-table">
+                                <tr valign="top">
+                                    <td style="width: 50px;">
+                                        <img src="{{ post.author.avatar(50) }}" alt="Avatar" class="rounded-circle post-avatar">
+                                    </td>
+                                    <td>
+                                        <div class="post-author d-flex"><div class="post-names me-1">{{ post.author.first_name }}</div> <div class="post-names me-2">{{ post.author.last_name }}</div> <span class="post-username">@{{ post.author.username }}</span></div>
+                                        <div class="post-body">{{ post.body }}</div>
+                                        <div class="post-timestamp">{{ moment(post.timestamp).format('ll') }}</div>
+                                    </td>
+
+                                </tr>
+                            </table>
+                        {% endif %}
+                        
+                    {% endfor %}
+                    <div class="pagination">
+                        {% if prev_url %}
+                            <a href="{{ prev_url }}" class="btn btn-secondary">Previous</a>
+                        {% endif %}
+                        {% if next_url %}
+                            <a href="{{ next_url }}" class="btn btn-secondary">Next</a>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-md-3 quick-links-card">
+                    <p class="QL-title">QUICK LINKS</p>
+                    
+                    <a href="{{ url_for('edit_profile') }}" class="btn-quick-link_1"> <img src="{{ url_for('static', filename='images/Pen-and-paper-icon.png') }}" alt="Icon" class="nav-icon"> Edit Profile</a> <br>
+                    <a href="{{ url_for('logout') }}" class="btn-quick-link_2"> <img src="{{ url_for('static', filename='images/Exit-icon.png') }}" alt="Icon" class="nav-icon">Sign Out</a>
+                </div>
+
             </div>
                 
             
@@ -36,4 +84,34 @@
             });
         </script>
      </div>
+
+<!-- Start of footer section -->
+    <section class="footer-pg2">
+        <div class="container" style="margin-top: 50px;">
+            <div class="row">
+                <div class="col-md-5">
+                    <a class="navbar-brand-footer d-flex">Nova<div style="color: rgb(168, 143, 70);"><p>.</p></div></a>    
+                    <p class="footer-text">A minimal space for thoughtful conversations.</p>
+                </div>
+                <div class="col-md-4 footer-links footer-text">
+                    <p class="footer-title">Links</p>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url_for('feed') }}">Feed</a></li>
+                        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3">
+                    <p class="footer-title">Connect</p>
+                    <div class="d-flex justify-content-start">
+                        <a class="btn-social" href="#"><img src="{{ url_for('static', filename='images/github-logo.png') }}" alt="GitHub" class="img-fluid"></a>
+                        <a class="btn-social" href="#"><img src="{{ url_for('static', filename='images/linkedin-logo.png') }}" alt="LinkedIn" class="img-fluid"></a>
+                        <a class="btn-social" href="#"><img src="{{ url_for('static', filename='images/x-logo.png') }}" alt="X" class="img-fluid"></a>
+                    </div>                        
+                </div>
+                        
+            </div>
+        </div>
+        
+    </section>
 {% endblock %}
