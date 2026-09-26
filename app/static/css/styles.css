@@ -1068,7 +1068,78 @@ color:#adadad
     background-color: rgb(13,27,42);
 }
 
-.form_reset_password_body{
+.btn-delete{
+    color: red;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-left: 430px;
+}
+
+.delete-icon {
+    width: 15px;
+    height: 15px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.btn-delete-profile-pg{
+    color: red;
+    display: flex;
+    justify-content: center;
+    margin-top: -5px;
+    margin-left: 575px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  border-radius: 18px; /* Smooth pill/circle shape */
+  border: 1.5px solid #e1e5eb;
+  background-color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #495057;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
 
 
+/* Active Page Style (Mustard Gold) */
+.page-link.active {
+  background-color: #d1a84f;
+  border-color: #d1a84f;
+}
+
+/* Hover Effects */
+.page-link:hover:not(.active) {
+  border-color: #cbd2db;
+  border-color: #d1a84f;
+  text-decoration: none;
+  background-color: #f8f9fa;
+}
+
+/* Next Button Styling */
+.page-link.next-btn {
+  width: 64px; /* Slightly wider pill shape for the arrow button */
+  border-radius: 30px;
+}
+
+.page-link.active {
+  background-color: #d1a84f; /* Gold background */
+  border-color: #d1a84f;
+  color: #495057; /* White text for contrast */
 }

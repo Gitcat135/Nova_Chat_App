@@ -1,3 +1,5 @@
+from os import abort
+
 from app import app
 from app.email import send_password_reset_email
 from app.email import send_password_reset_email
@@ -33,6 +35,8 @@ def sign_in():
         login_user(user, remember=form.remember_me.data)  # Log in the user
         flash(f'Welcome, {user.username}! You have successfully signed in.')  # Flash a success message
         return redirect(url_for('feed'))  # Redirect to Feed page after successful login
+    
+    
         
     return render_template('sign_in.html', title='Sign In Page', form=form)
 
@@ -53,6 +57,7 @@ def register():
 @app.route('/logout')
 def logout():
     logout_user()
+    flash('You have been logged out.')  # Flash a message indicating the user has been logged out
     return redirect(url_for('index'))
 
 @app.route('/feed', methods=['GET', 'POST'])
@@ -64,6 +69,7 @@ def feed():
         post = Post(body=form.body.data, author=current_user)
         db.session.add(post)
         db.session.commit()
+        flash('Your post is now live!')
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.timestamp.desc()).paginate(
         page=page, per_page=app.config['POSTS_PER_PAGE'], error_out=False
@@ -128,6 +134,7 @@ def request_reset_password():
     return render_template('request_reset_password.html', title=' Request Password Reset ', form=form)
 
 @app.route('/reset-password/<token>', methods=['GET', 'POST'])
+@login_required
 def reset_password(token):
     """Reset password URL"""
     if current_user.is_authenticated:
@@ -140,8 +147,23 @@ def reset_password(token):
         user.set_password(form.password.data)
         db.session.commit()
         flash('Your password has been reset.')
-        return redirect(url_for('login'))
-    return render_template(
-        'reset_password.html',
-        title='Reset Password',
-        form=form)
+        return redirect(url_for('sign_in'))
+    
+    return render_template('reset_password.html', title='Reset Password', form=form, user=user)
+
+
+@app.route('/delete_post/<int:post_id>', methods=['POST'])
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)  # Forbidden if the current user is not the author of the post
+    db.session.delete(post)
+    db.session.commit()
+    flash('Your post has been deleted.', 'success')
+    return redirect(url_for('feed'))
+
+@app.route('/posts')
+def posts():
+    page = request.args.get('page', 1, type=int)
+    # Fetch posts for this page...
+    return render_template('posts.html', page=page)
