@@ -40,12 +40,13 @@
                 <tr valign="top">
                     <td>
                         <div class="profile-post-body">{{post.body}}</div>    
-                        <div class="profile-post-timestamp">{{ moment(post.timestamp).format('lll') }}</div>
+                        <div class="profile-post-timestamp"><img src="{{ url_for('static', filename='images/clock-icon.png') }}" alt="Calendar Icon" class="clock-icon">{{ moment(post.timestamp).format('lll') }}</div>
                         {% if current_user.is_authenticated and post.author == current_user %}
                             <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');">
                                 <button type="submit" class="btn-delete-profile-pg"> <img src="{{ url_for('static', filename='images/Trash-icon.png') }}" alt="Delete Icon" class="delete-icon"> Delete Post</button>
                             </form>
                         {% endif %}
+
                     </td>
 
                     
@@ -55,13 +56,14 @@
             </table>
         {% endif %}                
     {% endfor %}
-    <div class="pagination">
+    <div style="margin-top: 20px; margin-left: 300px;">
         {% if prev_url %}
-            <a href="{{ prev_url }}" class="btn btn-secondary">Previous</a>
-        {% endif %}
-        {% if next_url %}
-            <a href="{{ next_url }}" class="btn btn-secondary">Next</a>
-        {% endif %}
+           <a href="{{ prev_url }}" class="btn_pagination"><img src="{{ url_for('static', filename='images/Arrow-left-icon.png') }}" alt="Previous" style="width: 12px; height: 12px;"></a>
+       {% endif %}
+       {% if next_url %}
+           <a href="{{ next_url }}" class="btn_pagination"><img src="{{ url_for('static', filename='images/Arrow-right-icon.png') }}" alt="Next" style="width: 12px; height: 12px;"></a>
+       {% endif %}
+    </div>
 
 </section>
 

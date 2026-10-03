@@ -45,7 +45,7 @@
                                     <td>
                                         <div class="post-author d-flex"><div class="post-names me-1">{{ post.author.first_name }}</div> <div class="post-names me-2">{{ post.author.last_name }}</div> <span class="post-username">@{{ post.author.username }}</span></div>
                                         <div class="post-body">{{ post.body }}</div>
-                                        <div class="post-timestamp">{{ moment(post.timestamp).format('ll') }}</div>
+                                        <div class="post-timestamp"><img src="{{ url_for('static', filename='images/clock-icon.png') }}" alt="Calendar Icon" class="clock-icon"> {{ moment(post.timestamp).format('ll') }}</div>
                                         {% if current_user.is_authenticated and post.author == current_user %}
                                             <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');">
                                                 <button type="submit" class="btn-delete"> <img src="{{ url_for('static', filename='images/Trash-icon.png') }}" alt="Delete Icon" class="delete-icon"> Delete Post</button>
@@ -58,23 +58,16 @@
                         {% endif %}
                         
                     {% endfor %}
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination">
-                            <li><a href="#" class="page-link active" onclick="setActive(this)">1</a></li>
-                            <li><a href="#" class="page-link" onclick="setActive(this)">2</a></li>
-                        </ul>
-                    </nav>
+                    
+                    <div class="pagination">
+                        {% if prev_url %}
+                            <a href="{{ prev_url }}" class="btn_pagination"><img src="{{ url_for('static', filename='images/Arrow-left-icon.png') }}" alt="Previous" style="width: 12px; height: 12px;"></a>
+                        {% endif %}
+                        {% if next_url %}
+                            <a href="{{ next_url }}" class="btn_pagination"><img src="{{ url_for('static', filename='images/Arrow-right-icon.png') }}" alt="Next" style="width: 12px; height: 12px;"></a>
+                        {% endif %}
+                    </div>
 
-                    <script>
-                        function setActive(element) {
-                            // Remove active class from all page links
-                            document.querySelectorAll('.page-link').forEach(link => {
-                            link.classList.remove('active');
-                            });
-                            // Add active class to clicked button
-                            element.classList.add('active');
-                        }
-                    </script>
                 </div>
 
                 <div class="col-md-3 quick-links-card">
@@ -128,4 +121,13 @@
         </div>
         
     </section>
+    <script>
+    document.querySelectorAll('.custom-pagination .page-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.custom-pagination .page-item').forEach(el => el.classList.remove('active'));
+        item.classList.add('active');
+      });
+    });
+  </script>
 {% endblock %}

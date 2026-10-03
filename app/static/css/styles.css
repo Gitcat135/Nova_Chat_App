@@ -528,6 +528,17 @@ background-color: rgb(24, 35, 48);
 color:#adadad
 }
 
+.btn-username{
+    margin-right: 5px;
+    text-decoration: none;
+    padding: 5px 5px;
+    border: 2px solid rgb(200,167,76);
+    border-radius: 43px;
+    font-size: 12.4px;
+    font-weight: 100;
+    color: rgb(200,167,76);
+}   
+
 .nav-icon {
     width: 15px;
     height: 15px;
@@ -560,6 +571,7 @@ color:#adadad
 .dropdown-item {
     margin-left: px;
     font-family: sans-serif;
+    width: 100%;
     font-size: 14.08px;
     padding: 6px 30px;
 }
@@ -795,9 +807,17 @@ color:#adadad
     margin-left: 400px;
     color: rgba(33, 37, 41, 0.75);
     font-family: sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
 }
+
+.clock-icon{
+    width: 17px;
+    height: 17px;
+    margin-right: 3px;
+    margin-top: -2px;
+}
+
 
 /* Profile page styles *//* Profile page styles *//* Profile page styles *//* Profile page styles *//* Profile page styles */
 
@@ -1091,14 +1111,7 @@ color:#adadad
     margin-left: 575px;
 }
 
-.pagination {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+
 
 .page-link {
   display: inline-flex;
@@ -1117,29 +1130,34 @@ color:#adadad
   transition: all 0.2s ease;
 }
 
-
-/* Active Page Style (Mustard Gold) */
-.page-link.active {
-  background-color: #d1a84f;
-  border-color: #d1a84f;
+.pagination {
+  margin-left: 340px;
+  margin-top: 20px;
+  gap: 3px;
 }
 
-/* Hover Effects */
-.page-link:hover:not(.active) {
-  border-color: #cbd2db;
-  border-color: #d1a84f;
+.btn_pagination {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 35px;
+  border-radius: 16px; /* Smooth pill/circle shape */
+  border: 1.5px solid rgb(229,231,235);
+  background-color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: rgb(13,27,42);
   text-decoration: none;
-  background-color: #f8f9fa;
+  transition: all 0.1s ease;
 }
 
-/* Next Button Styling */
-.page-link.next-btn {
-  width: 64px; /* Slightly wider pill shape for the arrow button */
-  border-radius: 30px;
+.btn_pagination:hover {
+  border-color: rgb(201,168,76);
+  background-color: #ffffffcd;
 }
 
-.page-link.active {
-  background-color: #d1a84f; /* Gold background */
-  border-color: #d1a84f;
-  color: #495057; /* White text for contrast */
+.btn_pagination:active {
+    border: 5px solid rgba(92, 179, 245, 0.37)
 }
