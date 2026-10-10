@@ -676,6 +676,7 @@ color:#adadad
 }
 
 .btn-view-profile{
+    vertical-align: middle;
     margin-left: 23px;
     text-decoration: none;
     font-family: sans-serif;
@@ -683,7 +684,7 @@ color:#adadad
     font-weight: 400;
     color:rgb(117, 125, 133);
     border: 1px solid rgb(117, 125, 133);
-    padding: 7px 60px;
+    padding: 2% 31%;
 }
 
 .btn-view-profile:hover{
@@ -804,7 +805,7 @@ color:#adadad
 
 .post-timestamp{
     margin-top: -55px;
-    margin-left: 400px;
+    margin-left: 70%;
     color: rgba(33, 37, 41, 0.75);
     font-family: sans-serif;
     font-size: 15px;
@@ -822,11 +823,11 @@ color:#adadad
 /* Profile page styles *//* Profile page styles *//* Profile page styles *//* Profile page styles *//* Profile page styles */
 
 .profile-card{
-    height: 220px;
+    height: 240px;
     width : 740px;
     margin-top: 115px;
     padding: 0px;
-    margin-left: 210px;
+    margin-left: 30%;
     border-radius: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -892,12 +893,12 @@ color:#adadad
 
 
 .profile-posts{
-    margin-left: 210px;
+    margin-left: 30%;
     margin-top: 55px;
 }
 
 .profile-post-table {
-    margin-left: 240px;
+    margin-left: 30%;
     width: 700px;
     height: 110px;
     border-radius: 15px;
@@ -924,7 +925,7 @@ color:#adadad
 .profile-post-timestamp{
     color: rgba(33, 37, 41, 0.75);
     margin-left: 20px;
-    margin-top: 10px;
+    margin-top: 5%;
     font-family: sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -934,7 +935,7 @@ color:#adadad
 
 .hero-edit-profile{
     margin-top: 110px;
-    margin-left: 330px;
+    margin-left: 30%;
 }
 
 .btn-back{
@@ -965,10 +966,11 @@ color:#adadad
 }
 
 .main-edit-profile{
-    margin-left: 330px;
+    margin-left: 30%;
 }
 
 .edit-profile-card{
+    position: center;
     border-radius: 10px;
     padding: 50px;
     height: 780px;
@@ -1093,7 +1095,7 @@ color:#adadad
     display: flex;
     justify-content: center;
     margin-top: 60px;
-    margin-left: 430px;
+    margin-left: 80%;
 }
 
 .delete-icon {
@@ -1130,9 +1132,9 @@ color:#adadad
   transition: all 0.2s ease;
 }
 
-.pagination {
-  margin-left: 340px;
-  margin-top: 20px;
+.pagination { 
+  margin-left: 50%;
+  margin-top: 0px;
   gap: 3px;
 }
 
@@ -1160,4 +1162,22 @@ color:#adadad
 
 .btn_pagination:active {
     border: 5px solid rgba(92, 179, 245, 0.37)
+}
+
+.pin-drop-icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 3px;
+}
+
+.link-icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 3px;
+}
+
+.calendar-icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 3px;
 }

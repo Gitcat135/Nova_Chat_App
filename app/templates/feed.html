@@ -29,7 +29,7 @@
                     <div style="color: rgba(33, 37, 41, 0.75); font-size:14px; font-weight: 400;">@{{ current_user.username }}</div>
                 </div>
 
-                <a href="{{ url_for('profile') }}" class="btn-view-profile rounded-pill">View Profile</a>
+                <a href="{{ url_for('profile', username=current_user.username) }}" class="btn-view-profile rounded-pill">View Profile</a>
 
             </div>
 
@@ -40,10 +40,12 @@
                             <table class="post-table">
                                 <tr valign="top">
                                     <td style="width: 50px;">
-                                        <img src="{{ post.author.avatar(50) }}" alt="Avatar" class="rounded-circle post-avatar">
+                                        <a href="{{ url_for('profile', username=post.author.username) }}">
+                                            <img src="{{ post.author.avatar(50) }}" alt="Avatar" class="rounded-circle post-avatar">
+                                        </a>
                                     </td>
                                     <td>
-                                        <div class="post-author d-flex"><div class="post-names me-1">{{ post.author.first_name }}</div> <div class="post-names me-2">{{ post.author.last_name }}</div> <span class="post-username">@{{ post.author.username }}</span></div>
+                                        <div  class="post-author d-flex"><a style="text-decoration: none;" href="{{ url_for('profile', username=post.author.username) }}"><div class="post-names me-1">{{ post.author.first_name }}</div></a> <a style="text-decoration: none;" href="{{ url_for('profile', username=post.author.username) }}"><div class="post-names me-2">{{ post.author.last_name }}</div></a> <span class="post-username">@{{ post.author.username }}</span></div>
                                         <div class="post-body">{{ post.body }}</div>
                                         <div class="post-timestamp"><img src="{{ url_for('static', filename='images/clock-icon.png') }}" alt="Calendar Icon" class="clock-icon"> {{ moment(post.timestamp).format('ll') }}</div>
                                         {% if current_user.is_authenticated and post.author == current_user %}
@@ -104,7 +106,7 @@
                     <p class="footer-title">Links</p>
                     <ul class="list-unstyled">
                         <li><a href="{{ url_for('feed') }}">Feed</a></li>
-                        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                        <li><a href="{{ url_for('profile', username=current_user.username) }}">Profile</a></li>
                     </ul>
                 </div>
                 

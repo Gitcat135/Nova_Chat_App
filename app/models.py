@@ -5,7 +5,7 @@ from flask_login import UserMixin
 from app import login, db, app
 from hashlib import md5
 import jwt
-from time import time
+from time import time, timezone
 
 @login.user_loader
 def load_user(id):
@@ -22,6 +22,8 @@ class User(db.Model, UserMixin):
     website = db.Column(db.String(120))
     password_hash = db.Column(db.String(128))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
+    member_since = db.Column(db.DateTime, default=datetime.utcnow)
+
 
     def get_reset_password_token(self, expires_in=600):
         """Generate a JWT token for password reset"""

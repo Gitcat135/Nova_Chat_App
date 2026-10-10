@@ -80,19 +80,28 @@ def feed():
         if posts.has_prev else None
     return render_template('feed.html', title='Feed', posts=posts.items, form=form, next_url=next_url, prev_url=prev_url)
 
-@app.route('/profile' , methods=['GET', 'POST'])
+@app.route('/profile/<username>')
 @login_required
-def profile():
-    """Profile URL"""
+def profile(username):
+    user = User.query.filter_by(username=username).first_or_404()
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.filter(Post.author == current_user).paginate(
-        page=page, per_page=app.config['POSTS_PER_PAGE'], error_out=False
+    posts = Post.query.filter_by(author=user).paginate(
+        page=page, per_page=app.config.get('POSTS_PER_PAGE', 5), error_out=False
     )
-    next_url = url_for('profile', page=posts.next_num) \
+    next_url = url_for('profile', username=user.username, page=posts.next_num) \
         if posts.has_next else None
-    prev_url = url_for('profile', page=posts.prev_num) \
+    prev_url = url_for('profile', username=user.username, page=posts.prev_num) \
         if posts.has_prev else None
-    return render_template('profile.html', title='Profile', posts=posts.items, next_url=next_url, prev_url=prev_url)
+        
+    # Make sure 'user=user' is passed here:
+    return render_template(
+        'profile.html', 
+        title='Profile', 
+        user=user, 
+        posts=posts.items, 
+        next_url=next_url, 
+        prev_url=prev_url
+    )
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required

@@ -8,15 +8,34 @@
         </div>
         <div class="profile-card-content">
             <div class="d-flex mb-0">
-                <img src="{{ current_user.avatar(80) }}" alt="Avatar" class="rounded-circle profile-avatar">
-                <p style=" margin-left: 20px; margin-bottom: 0px; font-family: sans-serif; font-size: 24px; font-weight: 700; color: rgb(33, 37, 41);">{{ current_user.first_name }} {{ current_user.last_name }}</p>
-                <a href="{{ url_for('edit_profile') }}" class="btn-edit-profile rounded-pill"> <img class="img-edit-profile-btn" src="{{ url_for('static', filename='images/grey-pencil-icon.png') }}" alt=""> Edit Profile</a>  
+                <img src="{{ user.avatar(80) }}" alt="Avatar" class="rounded-circle profile-avatar">
+                <p style=" margin-left: 20px;  margin-bottom: 20px; font-family: sans-serif; font-size: 24px; font-weight: 700; color: rgb(33, 37, 41);">{{ user.first_name }} {{ user.last_name }}</p>
+                {% if user == current_user %}
+                    <a href="{{ url_for('edit_profile') }}" class="btn-edit-profile rounded-pill"> <img class="img-edit-profile-btn" src="{{ url_for('static', filename='images/grey-pencil-icon.png') }}" alt=""> Edit Profile</a>  
+                {% endif %}
             </div>
             <div class="button-username">
 
-                <p style=" margin-right: 0px; padding-right: 0px; margin-left: 132px; margin-top: -30px; color: rgba(33, 37, 41, 0.75); font-size:16px; font-weight: 400;">@{{ current_user.username }}</p>
+                <p style=" margin-right: 0px; padding-right: 0px; margin-left: 132px; margin-top: -30px; color: rgba(33, 37, 41, 0.75); font-size:16px; font-weight: 400;">@{{ user.username }}</p>
                 
             </div>
+            <div class="profile-bio">
+                <p style="margin-left: 132px; margin-top: -10px; color: rgb(33, 37, 41); font-size:16px; font-weight: 400;">{{ user.bio }}</p>
+            </div>
+            <div style="display: flex; vertical-align: middle;">
+                <div class="profile-location">
+                    <p style="margin-left: 30px; margin-top: -10px; color: rgba(33, 37, 41, 0.75); font-size:14px; font-weight: 400;"><img src="{{ url_for('static', filename='images/pin-drop-icon.png') }}" alt="Pin drop Icon" class="pin-drop-icon"> {{ user.location }}</p>
+                </div>
+
+                <div class="profile-website">
+                    <p style="margin-left: 30px; margin-top: -10px; color: rgba(33, 37, 41, 0.75); font-size:14px; font-weight: 400;"><img src="{{ url_for('static', filename='images/link-icon.png') }}" alt="Link Icon" class="link-icon"> {{ user.website }}</p>
+                </div>
+
+                <div class="profile-joined">
+                    <p style="margin-left: 30px; margin-top: -10px; color: rgba(33, 37, 41, 0.75); font-size:14px; font-weight: 400;"><img src="{{ url_for('static', filename='images/calendar-icon.png') }}" alt="Calendar Icon" class="calendar-icon"> Joined {{ moment(user.member_since).format('ll') }}</p>
+                </div>
+            </div>
+            
             
             
 
@@ -56,7 +75,7 @@
             </table>
         {% endif %}                
     {% endfor %}
-    <div style="margin-top: 20px; margin-left: 300px;">
+    <div style="margin-top: 20px; margin-left: 45%;">
         {% if prev_url %}
            <a href="{{ prev_url }}" class="btn_pagination"><img src="{{ url_for('static', filename='images/Arrow-left-icon.png') }}" alt="Previous" style="width: 12px; height: 12px;"></a>
        {% endif %}
@@ -80,7 +99,7 @@
                         <p class="footer-title">Links</p>
                         <ul class="list-unstyled">
                             <li><a href="{{ url_for('feed') }}">Feed</a></li>
-                            <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                            <li><a href="{{ url_for('profile', username=current_user.username) }}">Profile</a></li>
                         </ul>
                     </div>
                     
