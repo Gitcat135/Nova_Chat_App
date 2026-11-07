@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="profile-website">
-                    <p style="margin-left: 30px; margin-top: -10px; color: rgba(33, 37, 41, 0.75); font-size:14px; font-weight: 400;"><img src="{{ url_for('static', filename='images/link-icon.png') }}" alt="Link Icon" class="link-icon"> {{ user.website }}</p>
+                    <p style="margin-left: 30px; margin-top: -10px; color: rgba(33, 37, 41, 0.75); font-size:14px; font-weight: 400;"><img src="{{ url_for('static', filename='images/link-icon.png') }}" alt="Link Icon" class="link-icon"><a href="{{ user.website }}" target="_blank" rel="noopener noreferrer">{{ user.website }}</a></p>
                 </div>
 
                 <div class="profile-joined">
@@ -75,7 +75,7 @@
             </table>
         {% endif %}                
     {% endfor %}
-    <div style="margin-top: 20px; margin-left: 45%;">
+    <div style="margin-top: 20px; margin-left: 45%; margin-bottom: 50px;">
         {% if prev_url %}
            <a href="{{ prev_url }}" class="btn_pagination"><img src="{{ url_for('static', filename='images/Arrow-left-icon.png') }}" alt="Previous" style="width: 12px; height: 12px;"></a>
        {% endif %}
@@ -88,7 +88,7 @@
 
 <!-- Start of footer section -->
         <section class="footer-pg2">
-            <div class="container" style="margin-top: 50px;">
+            <div class="container" style="margin-top: 50px; margin-bottom: 200px; height: 50%;">
                 <div class="row">
                     <div class="col-md-5">
                         <a class="navbar-brand-footer d-flex">Nova<div style="color: rgb(168, 143, 70);"><p>.</p></div></a>    

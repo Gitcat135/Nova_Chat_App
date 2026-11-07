@@ -19,4 +19,5 @@ class Config(object):
     ADMINS = os.environ.get('ADMINS')
 
     # Pagination configuration
-    POSTS_PER_PAGE = int(os.environ.get('POSTS_PER_PAGE'))
+    # Provide a default value (e.g., 10) if POSTS_PER_PAGE is not set in your environment
+    POSTS_PER_PAGE = int(os.environ.get('POSTS_PER_PAGE', 10))
