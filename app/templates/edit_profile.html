@@ -10,10 +10,22 @@
 </section>
 
 <section class="main-edit-profile">
-    <div class="edit-profile-card">
-        <div>
-            
+    <div class="edit-profile-card">  
+        <div class="mb-3 text-center">
+            <!-- Current Profile Photo Preview -->
+            <img id="photoPreview" src="https://via.placeholder.com/120" alt="Profile Photo" class="rounded-circle mb-3" width="120" height="120" style="object-fit: cover;">
+
+            <div>
+                <!-- Hidden actual file input (accepts only image files) -->
+                <input type="file" id="photoInput" name="profile_photo" accept="image/*" class="d-none">
+
+                <!-- Custom button that the user clicks -->
+                <button type="button" class="btn btn-outline-primary btn-sm" id="changePhotoBtn">
+                    Change Photo
+                </button>
+            </div>
         </div>
+    </div>
 
         <!-- NOTE: Added enctype="multipart/form-data" here -->
         <div class="form-body">
